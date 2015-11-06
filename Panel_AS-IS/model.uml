@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_EkLL0IRsEeWcSPKupa-hqA" name="NewModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="_kFpRsIRwEeWcSPKupa-hqA" name="Заявка на выклейку"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_l1YJ8IRwEeWcSPKupa-hqA" name="Заявка на резервирование панелей"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oHrjwIRwEeWcSPKupa-hqA" name="Закрытие заявки на выклейку&#xD;&#xA;"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pTZwAIRwEeWcSPKupa-hqA" name="Передача панелей клиенту"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_qocQUIRwEeWcSPKupa-hqA" name="Передача ОС"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_r5nkUIRwEeWcSPKupa-hqA" name="Возврат ОС"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_tQQAEIRwEeWcSPKupa-hqA" name="Комплектация номенклатуры"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8f-5oIRwEeWcSPKupa-hqA" name="РС Панели по стендам">
+    <ownedAttribute xmi:id="_P1im0IR2EeWcSPKupa-hqA" name="Организация"/>
+    <ownedAttribute xmi:id="_Sud7wIR2EeWcSPKupa-hqA" name="ТипСтенда"/>
+    <ownedAttribute xmi:id="_TrHxQIR2EeWcSPKupa-hqA" name="ОсновноеСредство"/>
+    <ownedAttribute xmi:id="_UsDCwIR2EeWcSPKupa-hqA" name="Панель"/>
+    <ownedAttribute xmi:id="_V9te8IR2EeWcSPKupa-hqA" name="Место"/>
+    <ownedAttribute xmi:id="_XGMJ8IR2EeWcSPKupa-hqA" name="Контрагент"/>
+    <ownedAttribute xmi:id="_X-ZkUIR2EeWcSPKupa-hqA" name="ТТГ"/>
+    <ownedAttribute xmi:id="_Yiw1oIR2EeWcSPKupa-hqA" name="Спецификация"/>
+    <ownedAttribute xmi:id="_ZhCbwIR2EeWcSPKupa-hqA" name="Количество" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_AKcZMIRxEeWcSPKupa-hqA" name="РН Свободные остатки">
+    <ownedAttribute xmi:id="_57k_AIR3EeWcSPKupa-hqA" name="Склад"/>
+    <ownedAttribute xmi:id="_65vQYIR3EeWcSPKupa-hqA" name="Номенклатура"/>
+    <ownedAttribute xmi:id="_8Axw8IR3EeWcSPKupa-hqA" name="Качество"/>
+    <ownedAttribute xmi:id="_9h6MgIR3EeWcSPKupa-hqA" name="Количество" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_D_fYIIRxEeWcSPKupa-hqA" name="РН ТоварыВРезервеНаСкладах">
+    <ownedAttribute xmi:id="_JnSC4IR4EeWcSPKupa-hqA" name="Склад"/>
+    <ownedAttribute xmi:id="_nFmasIR7EeWcSPKupa-hqA" name="Номенклатура"/>
+    <ownedAttribute xmi:id="_oZwxQIR7EeWcSPKupa-hqA" name="ДокументРезерва"/>
+    <ownedAttribute xmi:id="_peJmcIR7EeWcSPKupa-hqA" name="Количество" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_GDMVQIRxEeWcSPKupa-hqA" name="РН ВГ_РезервыПанелейПоКлиентам">
+    <ownedAttribute xmi:id="_2AllkIR2EeWcSPKupa-hqA" name="Организация"/>
+    <ownedAttribute xmi:id="_24Ue0IR2EeWcSPKupa-hqA" name="Склад"/>
+    <ownedAttribute xmi:id="_30d-AIR2EeWcSPKupa-hqA" name="Контрагент"/>
+    <ownedAttribute xmi:id="_4lJNAIR2EeWcSPKupa-hqA" name="ТорговаяТочка"/>
+    <ownedAttribute xmi:id="_5eczkIR2EeWcSPKupa-hqA" name="ДокументРезерва"/>
+    <ownedAttribute xmi:id="_6YrAIIR2EeWcSPKupa-hqA" name="Номенклатура"/>
+    <ownedAttribute xmi:id="_7bnD0IR2EeWcSPKupa-hqA" name="Количество" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_IUlJEIRxEeWcSPKupa-hqA" name="РН ВГ_ЗаявкиНаВыклейку">
+    <ownedAttribute xmi:id="_MlU90IR3EeWcSPKupa-hqA" name="Организация"/>
+    <ownedAttribute xmi:id="_QtlMoIR3EeWcSPKupa-hqA" name="Заявка"/>
+    <ownedAttribute xmi:id="_R2Z14IR3EeWcSPKupa-hqA" name="Панель"/>
+    <ownedAttribute xmi:id="_SpHFMIR3EeWcSPKupa-hqA" name="Спецификация"/>
+    <ownedAttribute xmi:id="_TnOTQIR3EeWcSPKupa-hqA" name="Контрагент"/>
+    <ownedAttribute xmi:id="_UekK8IR3EeWcSPKupa-hqA" name="ТТГ"/>
+    <ownedAttribute xmi:id="_VSMnUIR3EeWcSPKupa-hqA" name="Материал"/>
+    <ownedAttribute xmi:id="_WAU4oIR3EeWcSPKupa-hqA" name="КоличествоМатериала" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_KJn_IIRxEeWcSPKupa-hqA" name="РН ВГ_ПанелиВЗаявкахНаВыклейку">
+    <ownedAttribute xmi:id="_-lcikIR2EeWcSPKupa-hqA" name="Организация"/>
+    <ownedAttribute xmi:id="__fWmEIR2EeWcSPKupa-hqA" name="Заявка"/>
+    <ownedAttribute xmi:id="_As-20IR3EeWcSPKupa-hqA" name="Панель"/>
+    <ownedAttribute xmi:id="_BrPO0IR3EeWcSPKupa-hqA" name="Спецификация"/>
+    <ownedAttribute xmi:id="_ClhFwIR3EeWcSPKupa-hqA" name="Контрагент"/>
+    <ownedAttribute xmi:id="_DbXIoIR3EeWcSPKupa-hqA" name="ТТГ"/>
+    <ownedAttribute xmi:id="_EYopMIR3EeWcSPKupa-hqA" name="КоличествоПанелей" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_L5idkIRxEeWcSPKupa-hqA" name="РН СтоимостьЭкспозиции">
+    <ownedAttribute xmi:id="_rqrvcIR7EeWcSPKupa-hqA" name="Организация"/>
+    <ownedAttribute xmi:id="_shW4wIR7EeWcSPKupa-hqA" name="ТипСтенда"/>
+    <ownedAttribute xmi:id="_tUiCIIR7EeWcSPKupa-hqA" name="ОсновныеСредства"/>
+    <ownedAttribute xmi:id="_uO7N0IR7EeWcSPKupa-hqA" name="Панель"/>
+    <ownedAttribute xmi:id="_vJPhAIR7EeWcSPKupa-hqA" name="Контрагент"/>
+    <ownedAttribute xmi:id="_v9-JkIR7EeWcSPKupa-hqA" name="ТТГ"/>
+    <ownedAttribute xmi:id="_wtOcQIR7EeWcSPKupa-hqA" name="Стоимость" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_cmVLAIRxEeWcSPKupa-hqA" client="_kFpRsIRwEeWcSPKupa-hqA" supplier="_8f-5oIRwEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_eS-6EIRxEeWcSPKupa-hqA" client="_kFpRsIRwEeWcSPKupa-hqA" supplier="_AKcZMIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_fs6hcIRxEeWcSPKupa-hqA" client="_kFpRsIRwEeWcSPKupa-hqA" supplier="_D_fYIIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_hQWDEIRxEeWcSPKupa-hqA" client="_kFpRsIRwEeWcSPKupa-hqA" supplier="_GDMVQIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_ivlBMIRxEeWcSPKupa-hqA" client="_kFpRsIRwEeWcSPKupa-hqA" supplier="_IUlJEIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_kl97EIRxEeWcSPKupa-hqA" client="_kFpRsIRwEeWcSPKupa-hqA" supplier="_KJn_IIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_nV324IRxEeWcSPKupa-hqA" client="_kFpRsIRwEeWcSPKupa-hqA" supplier="_L5idkIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_m5gOgIRyEeWcSPKupa-hqA" client="_l1YJ8IRwEeWcSPKupa-hqA" supplier="_8f-5oIRwEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_oXvuIIRyEeWcSPKupa-hqA" client="_l1YJ8IRwEeWcSPKupa-hqA" supplier="_AKcZMIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_p5RyUIRyEeWcSPKupa-hqA" client="_l1YJ8IRwEeWcSPKupa-hqA" supplier="_GDMVQIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_r5v1QIRyEeWcSPKupa-hqA" name="РН ВГ_ПанелиУКлиентов">
+    <ownedAttribute xmi:id="_2CHdUIR7EeWcSPKupa-hqA" name="Организация"/>
+    <ownedAttribute xmi:id="_3UpcMIR7EeWcSPKupa-hqA" name="Контрагент"/>
+    <ownedAttribute xmi:id="_4SvcIIR7EeWcSPKupa-hqA" name="ТорговаяТочка"/>
+    <ownedAttribute xmi:id="_5MKXcIR7EeWcSPKupa-hqA" name="ДокументПередачи"/>
+    <ownedAttribute xmi:id="_6DgPIIR7EeWcSPKupa-hqA" name="Номенклатура"/>
+    <ownedAttribute xmi:id="_60sbgIR7EeWcSPKupa-hqA" name="Количество" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_xGSyoIRyEeWcSPKupa-hqA" client="_l1YJ8IRwEeWcSPKupa-hqA" supplier="_r5v1QIRyEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_Fv23oIRzEeWcSPKupa-hqA" client="_oHrjwIRwEeWcSPKupa-hqA" supplier="_AKcZMIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_IF-acIRzEeWcSPKupa-hqA" client="_oHrjwIRwEeWcSPKupa-hqA" supplier="_D_fYIIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_KnsJQIRzEeWcSPKupa-hqA" client="_oHrjwIRwEeWcSPKupa-hqA" supplier="_GDMVQIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_MKcVcIRzEeWcSPKupa-hqA" client="_oHrjwIRwEeWcSPKupa-hqA" supplier="_IUlJEIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_NsxD0IRzEeWcSPKupa-hqA" client="_oHrjwIRwEeWcSPKupa-hqA" supplier="_KJn_IIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_cdxkkIR0EeWcSPKupa-hqA" client="_pTZwAIRwEeWcSPKupa-hqA" supplier="_GDMVQIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_d6MfQIR0EeWcSPKupa-hqA" client="_pTZwAIRwEeWcSPKupa-hqA" supplier="_r5v1QIRyEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_ggJN0IR0EeWcSPKupa-hqA" client="_pTZwAIRwEeWcSPKupa-hqA" supplier="_L5idkIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_4XbzEIR0EeWcSPKupa-hqA" name="ВГ_СтендыУКлиентов">
+    <ownedAttribute xmi:id="_CfmRsIR8EeWcSPKupa-hqA" name="Организация"/>
+    <ownedAttribute xmi:id="_DPSCMIR8EeWcSPKupa-hqA" name="Контрагент"/>
+    <ownedAttribute xmi:id="_EFq3oIR8EeWcSPKupa-hqA" name="Грузополучатель"/>
+    <ownedAttribute xmi:id="_E6K2sIR8EeWcSPKupa-hqA" name="ОсновноеСредство"/>
+    <ownedAttribute xmi:id="_Fxs7oIR8EeWcSPKupa-hqA" name="Количество" visibility="protected"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_9-fiMIR0EeWcSPKupa-hqA" client="_qocQUIRwEeWcSPKupa-hqA" supplier="_4XbzEIR0EeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_BuPxcIR1EeWcSPKupa-hqA" client="_r5nkUIRwEeWcSPKupa-hqA" supplier="_4XbzEIR0EeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_J630oIR1EeWcSPKupa-hqA" client="_tQQAEIRwEeWcSPKupa-hqA" supplier="_IUlJEIRxEeWcSPKupa-hqA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_MicT0IR1EeWcSPKupa-hqA" client="_tQQAEIRwEeWcSPKupa-hqA" supplier="_KJn_IIRxEeWcSPKupa-hqA"/>
+</uml:Model>
