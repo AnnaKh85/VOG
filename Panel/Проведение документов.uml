@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_DB_8wHx8EeWqF-2UINpXDQ" name="Проведение">
+  <ownedComment xmi:id="_IuC1kHyoEeWyqPsOZb4tTw" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _rQNvUHyLEeWqF-2UINpXDQ">
+    <body>Снят Оборудование клиента = Истина. Состояние - Резерв. Проводить док. в состоянии Создан и делать запись в регистр.&#xD;
+Операция - Снятие резерва, состояние - снят с резерва.</body>
+  </ownedComment>
+  <ownedComment xmi:id="_mMepgHyoEeWyqPsOZb4tTw" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _F66NIHyIEeWqF-2UINpXDQ">
+    <body>Расход</body>
+  </ownedComment>
+  <ownedComment xmi:id="_rawFMHyoEeWyqPsOZb4tTw" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _-51-IHyHEeWqF-2UINpXDQ">
+    <body>ПРИХОД - Установка резерва, РАСХОД - снятие резерва</body>
+  </ownedComment>
+  <ownedComment xmi:id="_SoWGEHypEeWyqPsOZb4tTw" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _AIETsHynEeWyqPsOZb4tTw _EDluEHynEeWyqPsOZb4tTw">
+    <body>Состояние - Возврат</body>
+  </ownedComment>
+  <ownedComment xmi:id="_ao0joHypEeWyqPsOZb4tTw" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _Ok3UcHynEeWyqPsOZb4tTw _KHejIHynEeWyqPsOZb4tTw">
+    <body>Состояние - передан клиенту</body>
+  </ownedComment>
+  <ownedComment xmi:id="_luBWcHypEeWyqPsOZb4tTw" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _2kMh0HyHEeWqF-2UINpXDQ">
+    <body>ПРИХОД</body>
+  </ownedComment>
+  <ownedComment xmi:id="_UNO0sHyzEeWyqPsOZb4tTw" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _8IetIHywEeWyqPsOZb4tTw">
+    <body>Приход - состояние Подготовлен. Расход - к производству</body>
+  </ownedComment>
+  <ownedComment xmi:id="_eU194HyzEeWyqPsOZb4tTw" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _7huPIHywEeWyqPsOZb4tTw">
+    <body>Расход в статусе к производству</body>
+  </ownedComment>
+  <ownedComment xmi:id="_tEyHoHy0EeWyqPsOZb4tTw" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _rCtiMHy0EeWyqPsOZb4tTw">
+    <body>Приход</body>
+  </ownedComment>
+  <ownedComment xmi:id="_h7JBsH7NEeWSQ8rROK6Jkg" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _2JRyUHyFEeWqF-2UINpXDQ">
+    <body>В ТЧ ОС добавить ссылку-регистратор на Заявку на выклейку или Резервирование панелей (которая сделала запись в состояние Резерв).&#xD;
+При проведении проверять есть ли Панели в состоянии Резерв по регистрам Панели по стендам и Панели по стендам клиентов (с отбором по контрагентам и ТТГ??).&#xD;
+Необходимо найти актуальное состояние по регистрам.&#xD;
+Каждая панель идентифицируется Наименованием, Контрагентом и ТТГ.&#xD;
+В док. Кнопка заполнить по заявкам.&#xD;
+В момент заполнения Док. устанавливать признак (галочка невидимая) в док. в ТЧ ОС  &#xD;
+&#xD;
+Записывать состояние - Факт (передан клиенту)</body>
+  </ownedComment>
+  <ownedComment xmi:id="_tMJNIH7TEeWSQ8rROK6Jkg" annotatedElement="_DB_8wHx8EeWqF-2UINpXDQ _-WymUHyFEeWqF-2UINpXDQ">
+    <body>Если Новый = Истина, &#xD;
+то писать состояние - Резерв</body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Package" xmi:id="_q-NXIHx8EeWqF-2UINpXDQ" name="Заявка на выклейку. Выклейка для клиента">
+    <packagedElement xmi:type="uml:Package" xmi:id="_rl8FgHx8EeWqF-2UINpXDQ" name="ТЧ Экспозиция"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_JpxFgHx9EeWqF-2UINpXDQ" name="ТЧ Товары"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Lv9V8Hx9EeWqF-2UINpXDQ" name="ТЧ Оборудование"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ORGdAHx9EeWqF-2UINpXDQ" name="ТЧ Клиенты"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_QaJNIHx9EeWqF-2UINpXDQ" name="ТЧ Панели"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_-i4bMHx9EeWqF-2UINpXDQ" client="_rl8FgHx8EeWqF-2UINpXDQ" supplier="_buOJcHx9EeWqF-2UINpXDQ">
+      <name xsi:nil="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_tAHLMHyBEeWqF-2UINpXDQ" name="Приход" client="_JpxFgHx9EeWqF-2UINpXDQ" supplier="_y_2VgHyAEeWqF-2UINpXDQ">
+      <ownedComment xmi:id="_0R-2UHyBEeWqF-2UINpXDQ" annotatedElement="_tAHLMHyBEeWqF-2UINpXDQ">
+        <body>ПРИХОД - в статусе Подготовлен&#xD;
+РАСХОД - в статусе К производству</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_96bh0HyCEeWqF-2UINpXDQ" client="_JpxFgHx9EeWqF-2UINpXDQ" supplier="_-yFNcHyAEeWqF-2UINpXDQ">
+      <ownedComment xmi:id="_lwMyoHynEeWyqPsOZb4tTw" annotatedElement="_96bh0HyCEeWqF-2UINpXDQ">
+        <body>Расход</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_NGACMHyFEeWqF-2UINpXDQ" client="_rl8FgHx8EeWqF-2UINpXDQ" supplier="_G6n3UHyAEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_-WymUHyFEeWqF-2UINpXDQ" client="_rl8FgHx8EeWqF-2UINpXDQ" supplier="_oMv0wHx_EeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_fjwsEHyHEeWqF-2UINpXDQ" client="_rl8FgHx8EeWqF-2UINpXDQ" supplier="_9feLgHx_EeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_2kMh0HyHEeWqF-2UINpXDQ" client="_rl8FgHx8EeWqF-2UINpXDQ" supplier="_XL7ioHyAEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_iVkywHyPEeWqF-2UINpXDQ" name="Спецификация" client="_rl8FgHx8EeWqF-2UINpXDQ" supplier="_JpxFgHx9EeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Bx6d0HyQEeWqF-2UINpXDQ" client="_rl8FgHx8EeWqF-2UINpXDQ" supplier="_Lv9V8Hx9EeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_CqXIwHyQEeWqF-2UINpXDQ" client="_rl8FgHx8EeWqF-2UINpXDQ" supplier="_ORGdAHx9EeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Dv6bkHyQEeWqF-2UINpXDQ" client="_rl8FgHx8EeWqF-2UINpXDQ" supplier="_QaJNIHx9EeWqF-2UINpXDQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_buOJcHx9EeWqF-2UINpXDQ" name="РС Панели по стендам клиентов">
+    <ownedComment xmi:id="_W4BMkH5LEeWVWv6Rb1u7fg" annotatedElement="_-i4bMHx9EeWqF-2UINpXDQ">
+      <body>Занимает места, если оборудование не наше&#xD;
+Состояние - Резерв, в состоянии Создан док. проводиться и делает запись в регистр</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_ikcaYHx9EeWqF-2UINpXDQ" name="Организация" type="_WoJLAHx-EeWqF-2UINpXDQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ikePkHx9EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ikePkXx9EeWqF-2UINpXDQ" value="1"/>
+      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_idFYsHx-EeWqF-2UINpXDQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_IcaPoHx_EeWqF-2UINpXDQ" name="Тип стенда" type="_ghDBgH45EeWVWv6Rb1u7fg" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LKQ9AHx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LKQ9AXx_EeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_M6aE8Hx_EeWqF-2UINpXDQ" name="Контрагент" type="_v28VwHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NNOTQHx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NNOTQXx_EeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_zwUSwH45EeWVWv6Rb1u7fg" name="ТТГ" type="_v28VwHx-EeWqF-2UINpXDQ"/>
+    <ownedAttribute xmi:id="_Q1k6AHx_EeWqF-2UINpXDQ" name="Панель" visibility="public" type="_40s68Hx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RQJWIHx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RQJWIXx_EeWqF-2UINpXDQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_OoSjEHx_EeWqF-2UINpXDQ" name="Состояние" visibility="protected" type="_2u324Hx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O-rp0Hx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O-rp0Xx_EeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_UHqPEIOAEeWU_5iEPULgoQ" name="Стоимость" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a3xQ8IOAEeWU_5iEPULgoQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aGoH4IOAEeWU_5iEPULgoQ"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_WoJLAHx-EeWqF-2UINpXDQ" name="Спр.Организации"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_tyHXQHx-EeWqF-2UINpXDQ" name="Спр. Стенды"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_v28VwHx-EeWqF-2UINpXDQ" name="Спр. Контрагенты"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_2u324Hx-EeWqF-2UINpXDQ" name="Спр. Состояния"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_40s68Hx-EeWqF-2UINpXDQ" name="Спр. Номенклатура"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_oMv0wHx_EeWqF-2UINpXDQ" name="РС Стенды по клиентам">
+    <ownedAttribute xmi:id="_r4V8wHx_EeWqF-2UINpXDQ" name="Организация" type="_WoJLAHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sSrIUHx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sSrvYHx_EeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_tr8oYHx_EeWqF-2UINpXDQ" name="Стенд" type="_tyHXQHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t-tzYHx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t-tzYXx_EeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_vq-g4Hx_EeWqF-2UINpXDQ" name="Контрагент" type="_v28VwHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v9FkkHx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v9FkkXx_EeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xUPkwHx_EeWqF-2UINpXDQ" name="Грузополучатель" type="_v28VwHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xrltwHx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xrltwXx_EeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_0qGtUHx_EeWqF-2UINpXDQ" name="Состояние" visibility="protected" type="_2u324Hx-EeWqF-2UINpXDQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0qHUYHx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0qHUYXx_EeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9feLgHx_EeWqF-2UINpXDQ" name="РС Учет стендов">
+    <ownedAttribute xmi:id="_-RCyYHx_EeWqF-2UINpXDQ" name="Организация" type="_WoJLAHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__bgaYHx_EeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__bgaYXx_EeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Ao8d4HyAEeWqF-2UINpXDQ" name="Стенд" type="_tyHXQHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A6_QIHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A6_QIXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_B5dqkHyAEeWqF-2UINpXDQ" name="Состояние" visibility="protected" type="_2u324Hx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CVNLYHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CVNLYXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_G6n3UHyAEeWqF-2UINpXDQ" name="РС Панели по стендам">
+    <ownedAttribute xmi:id="_H2GBEHyAEeWqF-2UINpXDQ" name="Организация" type="_WoJLAHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IpgbAHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IpgbAXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_KQEJIHyAEeWqF-2UINpXDQ" name="Стенд" type="_tyHXQHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lm9qoHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LnB8EHyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_PPXUsHyAEeWqF-2UINpXDQ" name="Панель" type="_40s68Hx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QCJcgHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QCKDkHyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_M1PboHyAEeWqF-2UINpXDQ" name="Место">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M1QCsHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M1QCsXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Q_76cHyAEeWqF-2UINpXDQ" name="Состояние" visibility="protected" type="_2u324Hx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RY2wwHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RY2wwXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_o0BzoIOEEeWU_5iEPULgoQ" name="Стоимость" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_XL7ioHyAEeWqF-2UINpXDQ" name="РН Резервы панелей по клиентам">
+    <ownedComment xmi:id="__ShuQH7UEeWSQ8rROK6Jkg" annotatedElement="_XL7ioHyAEeWqF-2UINpXDQ">
+      <body>Проверить необходимость этого регистра.</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_X-2NUHyAEeWqF-2UINpXDQ" name="Организация" type="_WoJLAHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YqpjYHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YqpjYXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_egANMHyAEeWqF-2UINpXDQ" name="Склад" type="_dAXmcHyAEeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e9ezYHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e9ezYXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_g6Nl0HyAEeWqF-2UINpXDQ" name="Контрагент" type="_v28VwHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hLp7IHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hLp7IXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_i1b8YHyAEeWqF-2UINpXDQ" name="ТТГ" type="_v28VwHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jI4c0HyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jI4c0XyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_nWOnAHyAEeWqF-2UINpXDQ" name="Документ резерва" type="_kwVi0HyAEeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nq0-AHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nq0-AXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_pjM04HyAEeWqF-2UINpXDQ" name="Номенклатура" type="_40s68Hx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p9OecHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p9OecXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_sI99QHyAEeWqF-2UINpXDQ" name="Количество" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sI99QXyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sI99QnyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_dAXmcHyAEeWqF-2UINpXDQ" name="Спр. Склады"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_kwVi0HyAEeWqF-2UINpXDQ" name="ДокументСсылка"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_2VgHyAEeWqF-2UINpXDQ" name="РН Товары в резерве на складах">
+    <ownedAttribute xmi:id="_0djCkHyAEeWqF-2UINpXDQ" name="Склад" type="_dAXmcHyAEeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1TZsgHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1TZsgXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_2QtCQHyAEeWqF-2UINpXDQ" name="Номенклатура" type="_40s68Hx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2mZlcHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2mZlcXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_38IpUHyAEeWqF-2UINpXDQ" name="Документ резерва" type="_kwVi0HyAEeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4Vb6IHyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4Vb6IXyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_6CG3UHyAEeWqF-2UINpXDQ" name="Количество" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6CG3UXyAEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6CG3UnyAEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_-yFNcHyAEeWqF-2UINpXDQ" name="РН Свободные остатки">
+    <ownedAttribute xmi:id="_BvRXUHyBEeWqF-2UINpXDQ" name="Склад" type="_dAXmcHyAEeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CkV-IHyBEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CkV-IXyBEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_De7XEHyBEeWqF-2UINpXDQ" name="Номенклатура" type="_40s68Hx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_D8ZWMHyBEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_D8ZWMXyBEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_JKvDUHyBEeWqF-2UINpXDQ" name="Качество" type="_HOrmUHyBEeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JZhGMHyBEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JZhGMXyBEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Lx2PgHyBEeWqF-2UINpXDQ" name="Количество" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lx22kHyBEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Lx22kXyBEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_HOrmUHyBEeWqF-2UINpXDQ" name="Спр. Качества">
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_DitDAHyxEeWyqPsOZb4tTw" name="Спр. Качества"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RNQvUHyBEeWqF-2UINpXDQ" name="РН Стоимость экспозиции">
+    <ownedAttribute xmi:id="_TPz14HyBEeWqF-2UINpXDQ" name="Панель" type="_40s68Hx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UKXZoHyBEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UKYAsHyBEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Xo-OgHyBEeWqF-2UINpXDQ" name="Контрагент" type="_v28VwHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yc17cHyBEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Yc17cXyBEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aTlaoHyBEeWqF-2UINpXDQ" name="ТТГ" type="_v28VwHx-EeWqF-2UINpXDQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_atNbkHyBEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_atOCoHyBEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_jNeMcHyBEeWqF-2UINpXDQ" name="Количество" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jNeMcXyBEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jNezgHyBEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_lLnUIHyBEeWqF-2UINpXDQ" name="Стоимость" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lLn7MHyBEeWqF-2UINpXDQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lLn7MXyBEeWqF-2UINpXDQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_DmOnAHyDEeWqF-2UINpXDQ" name="Комплектация номенклатуры">
+    <packagedElement xmi:type="uml:Package" xmi:id="_IIkw0HyDEeWqF-2UINpXDQ" name="ТЧ Комплектующие"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_MWHvUHyDEeWqF-2UINpXDQ" client="_IIkw0HyDEeWqF-2UINpXDQ" supplier="_RNQvUHyBEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_yRsWkHyiEeWyqPsOZb4tTw" client="_IIkw0HyDEeWqF-2UINpXDQ" supplier="_RNQvUHyBEeWqF-2UINpXDQ">
+      <ownedComment xmi:id="_G7USkH47EeWVWv6Rb1u7fg" annotatedElement="_yRsWkHyiEeWyqPsOZb4tTw">
+        <body>Только для операции Выклейка для клиента</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_joz8cHy0EeWyqPsOZb4tTw" name="ТЧ выходное изделие"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_rCtiMHy0EeWyqPsOZb4tTw" client="_joz8cHy0EeWyqPsOZb4tTw" supplier="_-yFNcHyAEeWqF-2UINpXDQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0GOAUHyDEeWqF-2UINpXDQ" name="Заявка на резервирование панелей">
+    <packagedElement xmi:type="uml:Package" xmi:id="_4cTPwHyDEeWqF-2UINpXDQ" name="ТЧ Экспозиция"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_74TckHyDEeWqF-2UINpXDQ" name="ТЧ Панели"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_IBfb8HyEEeWqF-2UINpXDQ" client="_74TckHyDEeWqF-2UINpXDQ" supplier="_RNQvUHyBEeWqF-2UINpXDQ">
+      <ownedComment xmi:id="_wbc0YHynEeWyqPsOZb4tTw" annotatedElement="_IBfb8HyEEeWqF-2UINpXDQ _WYCqwHyEEeWqF-2UINpXDQ">
+        <body>ПРИХОД - Установка резерва, РАСХОД - снятие резерва</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_WYCqwHyEEeWqF-2UINpXDQ" name="Вид операции">
+      <ownedAttribute xmi:id="_gXogYHyEEeWqF-2UINpXDQ" name="Резерв под клиента"/>
+      <ownedAttribute xmi:id="_iIKC0HyEEeWqF-2UINpXDQ" name="Снятие резерва"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_UPZGwHyFEeWqF-2UINpXDQ" client="_4cTPwHyDEeWqF-2UINpXDQ" supplier="_G6n3UHyAEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_HPOxMHyHEeWqF-2UINpXDQ" client="_4cTPwHyDEeWqF-2UINpXDQ" supplier="_oMv0wHx_EeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_jiz7kHyHEeWqF-2UINpXDQ" client="_4cTPwHyDEeWqF-2UINpXDQ" supplier="_9feLgHx_EeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_-51-IHyHEeWqF-2UINpXDQ" client="_4cTPwHyDEeWqF-2UINpXDQ" supplier="_XL7ioHyAEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_rQNvUHyLEeWqF-2UINpXDQ" client="_4cTPwHyDEeWqF-2UINpXDQ" supplier="_buOJcHx9EeWqF-2UINpXDQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_bDJSgHyFEeWqF-2UINpXDQ" name="Передача панелей клиенту">
+    <packagedElement xmi:type="uml:Package" xmi:id="_ei5W4HyFEeWqF-2UINpXDQ" name="ТЧ Панели"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_2JRyUHyFEeWqF-2UINpXDQ" client="_ei5W4HyFEeWqF-2UINpXDQ" supplier="_buOJcHx9EeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_F66NIHyIEeWqF-2UINpXDQ" client="_ei5W4HyFEeWqF-2UINpXDQ" supplier="_XL7ioHyAEeWqF-2UINpXDQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_l39f8HyFEeWqF-2UINpXDQ" client="_bDJSgHyFEeWqF-2UINpXDQ" supplier="_G6n3UHyAEeWqF-2UINpXDQ"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_NxxRIHyHEeWqF-2UINpXDQ" name="ВГ Передача ОС"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Plji8HyHEeWqF-2UINpXDQ" name="ВГ Возврат ОС"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_VGQycHyHEeWqF-2UINpXDQ" client="_NxxRIHyHEeWqF-2UINpXDQ" supplier="_oMv0wHx_EeWqF-2UINpXDQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_aF8_kHyHEeWqF-2UINpXDQ" client="_Plji8HyHEeWqF-2UINpXDQ" supplier="_oMv0wHx_EeWqF-2UINpXDQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_qaY3YHyHEeWqF-2UINpXDQ" client="_NxxRIHyHEeWqF-2UINpXDQ" supplier="_9feLgHx_EeWqF-2UINpXDQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_u9lVwHyHEeWqF-2UINpXDQ" client="_Plji8HyHEeWqF-2UINpXDQ" supplier="_9feLgHx_EeWqF-2UINpXDQ"/>
+  <packagedElement xmi:type="uml:Model" xmi:id="_a1VlYHyYEeWqF-2UINpXDQ" name="Проведение по регистрам">
+    <packagedElement xmi:type="uml:Package" xmi:id="_a1VlYXyYEeWqF-2UINpXDQ" name="Заявка на выклейку. Выклейка для клиента">
+      <packagedElement xmi:type="uml:Package" xmi:id="_a1VlYnyYEeWqF-2UINpXDQ" name="ТЧ Экспозиция"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_a1VlY3yYEeWqF-2UINpXDQ" name="ТЧ Товары"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_a1VlZHyYEeWqF-2UINpXDQ" name="ТЧ Оборудование"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_a1VlZXyYEeWqF-2UINpXDQ" name="ТЧ Клиенты"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_a1VlZnyYEeWqF-2UINpXDQ" name="ТЧ Панели"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VlZ3yYEeWqF-2UINpXDQ" client="_a1VlYnyYEeWqF-2UINpXDQ" supplier="_a1Vlc3yYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VlaHyYEeWqF-2UINpXDQ" name="Приход" client="_a1VlY3yYEeWqF-2UINpXDQ" supplier="_a1VlznyYEeWqF-2UINpXDQ">
+        <ownedComment xmi:id="_a1VlaXyYEeWqF-2UINpXDQ" annotatedElement="_a1VlaHyYEeWqF-2UINpXDQ">
+          <body>Приход</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VlanyYEeWqF-2UINpXDQ" client="_a1VlY3yYEeWqF-2UINpXDQ" supplier="_a1Vl23yYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1Vla3yYEeWqF-2UINpXDQ" client="_a1VlYnyYEeWqF-2UINpXDQ" supplier="_a1VlpnyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VlbHyYEeWqF-2UINpXDQ" client="_a1VlYnyYEeWqF-2UINpXDQ" supplier="_a1VljHyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VlbXyYEeWqF-2UINpXDQ" client="_a1VlYnyYEeWqF-2UINpXDQ" supplier="_a1VlnHyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VlbnyYEeWqF-2UINpXDQ" client="_a1VlYnyYEeWqF-2UINpXDQ" supplier="_a1VltnyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1Vlb3yYEeWqF-2UINpXDQ" name="Спецификация" client="_a1VlYnyYEeWqF-2UINpXDQ" supplier="_a1VlY3yYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VlcHyYEeWqF-2UINpXDQ" client="_a1VlYnyYEeWqF-2UINpXDQ" supplier="_a1VlZHyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VlcXyYEeWqF-2UINpXDQ" client="_a1VlYnyYEeWqF-2UINpXDQ" supplier="_a1VlZXyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VlcnyYEeWqF-2UINpXDQ" client="_a1VlYnyYEeWqF-2UINpXDQ" supplier="_a1VlZnyYEeWqF-2UINpXDQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a1Vlc3yYEeWqF-2UINpXDQ" name="РС Панели по стендам клиентов">
+      <ownedAttribute xmi:id="_a1VldHyYEeWqF-2UINpXDQ" name="Организация" type="_a1Vlh3yYEeWqF-2UINpXDQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VldXyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VldnyYEeWqF-2UINpXDQ" value="1"/>
+        <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_a1Vld3yYEeWqF-2UINpXDQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VleHyYEeWqF-2UINpXDQ" name="Стенд" type="_a1VliHyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VleXyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlenyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vle3yYEeWqF-2UINpXDQ" name="Контрагент" type="_a1VliXyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlfHyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlfXyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlfnyYEeWqF-2UINpXDQ" name="Состояние" type="_a1VlinyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vlf3yYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlgHyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlgXyYEeWqF-2UINpXDQ" name="Панель" visibility="protected" type="_a1Vli3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlgnyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vlg3yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlhHyYEeWqF-2UINpXDQ" name="Установлен" visibility="protected">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlhXyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlhnyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_a1Vlh3yYEeWqF-2UINpXDQ" name="Спр.Организации"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_a1VliHyYEeWqF-2UINpXDQ" name="Спр. Стенды"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_a1VliXyYEeWqF-2UINpXDQ" name="Спр. Контрагенты"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_a1VlinyYEeWqF-2UINpXDQ" name="Спр. Состояния"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_a1Vli3yYEeWqF-2UINpXDQ" name="Спр. Номенклатура"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a1VljHyYEeWqF-2UINpXDQ" name="РС Стенды по клиентам">
+      <ownedAttribute xmi:id="_a1VljXyYEeWqF-2UINpXDQ" name="Организация" type="_a1Vlh3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VljnyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vlj3yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlkHyYEeWqF-2UINpXDQ" name="Стенд" type="_a1VliHyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlkXyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlknyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vlk3yYEeWqF-2UINpXDQ" name="Контрагент" type="_a1VliXyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VllHyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VllXyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VllnyYEeWqF-2UINpXDQ" name="Грузополучатель" type="_a1VliXyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vll3yYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlmHyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlmXyYEeWqF-2UINpXDQ" name="Состояние" visibility="protected" type="_a1VlinyYEeWqF-2UINpXDQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlmnyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vlm3yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a1VlnHyYEeWqF-2UINpXDQ" name="РС Учет стендов">
+      <ownedAttribute xmi:id="_a1VlnXyYEeWqF-2UINpXDQ" name="Организация" type="_a1Vlh3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlnnyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vln3yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VloHyYEeWqF-2UINpXDQ" name="Стенд" type="_a1VliHyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VloXyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlonyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vlo3yYEeWqF-2UINpXDQ" name="Состояние" visibility="protected" type="_a1VlinyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlpHyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlpXyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a1VlpnyYEeWqF-2UINpXDQ" name="РС Панели по стендам">
+      <ownedAttribute xmi:id="_a1Vlp3yYEeWqF-2UINpXDQ" name="Организация" type="_a1Vlh3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlqHyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlqXyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlqnyYEeWqF-2UINpXDQ" name="Стенд" type="_a1VliHyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vlq3yYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlrHyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlrXyYEeWqF-2UINpXDQ" name="Место">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlrnyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vlr3yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlsHyYEeWqF-2UINpXDQ" name="Панель" type="_a1Vli3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlsXyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlsnyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vls3yYEeWqF-2UINpXDQ" name="Состояние" type="_a1VlinyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VltHyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VltXyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a1VltnyYEeWqF-2UINpXDQ" name="РН Резервы панелей по клиентам">
+      <ownedAttribute xmi:id="_a1Vlt3yYEeWqF-2UINpXDQ" name="Организация" type="_a1Vlh3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VluHyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VluXyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlunyYEeWqF-2UINpXDQ" name="Склад" type="_a1VlzHyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vlu3yYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlvHyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlvXyYEeWqF-2UINpXDQ" name="Контрагент" type="_a1VliXyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlvnyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vlv3yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlwHyYEeWqF-2UINpXDQ" name="ТТГ" type="_a1VliXyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlwXyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlwnyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vlw3yYEeWqF-2UINpXDQ" name="Документ резерва" type="_a1VlzXyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlxHyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlxXyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlxnyYEeWqF-2UINpXDQ" name="Номенклатура" type="_a1Vli3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vlx3yYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1VlyHyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1VlyXyYEeWqF-2UINpXDQ" name="Количество" visibility="protected">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1VlynyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vly3yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_a1VlzHyYEeWqF-2UINpXDQ" name="Спр. Склады"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_a1VlzXyYEeWqF-2UINpXDQ" name="ДокументСсылка"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a1VlznyYEeWqF-2UINpXDQ" name="РН Товары в резерве на складах">
+      <ownedAttribute xmi:id="_a1Vlz3yYEeWqF-2UINpXDQ" name="Склад" type="_a1VlzHyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl0HyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl0XyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl0nyYEeWqF-2UINpXDQ" name="Номенклатура" type="_a1Vli3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl03yYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl1HyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl1XyYEeWqF-2UINpXDQ" name="Документ резерва" type="_a1VlzXyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl1nyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl13yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl2HyYEeWqF-2UINpXDQ" name="Количество" visibility="protected">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl2XyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl2nyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a1Vl23yYEeWqF-2UINpXDQ" name="РН Свободные остатки">
+      <ownedAttribute xmi:id="_a1Vl3HyYEeWqF-2UINpXDQ" name="Склад" type="_a1VlzHyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl3XyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl3nyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl33yYEeWqF-2UINpXDQ" name="Номенклатура" type="_a1Vli3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl4HyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl4XyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl4nyYEeWqF-2UINpXDQ" name="Качество" type="_a1Vl6HyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl43yYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl5HyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl5XyYEeWqF-2UINpXDQ" name="Количество" visibility="protected">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl5nyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl53yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_a1Vl6HyYEeWqF-2UINpXDQ" name="Спр. Качества"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a1Vl6XyYEeWqF-2UINpXDQ" name="РН Стоимость экспозиции">
+      <ownedAttribute xmi:id="_a1Vl6nyYEeWqF-2UINpXDQ" name="Панель" type="_a1Vli3yYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl63yYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl7HyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl7XyYEeWqF-2UINpXDQ" name="Контрагент" type="_a1VliXyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl7nyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl73yYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl8HyYEeWqF-2UINpXDQ" name="ТТГ" type="_a1VliXyYEeWqF-2UINpXDQ" aggregation="composite">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl8XyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl8nyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl83yYEeWqF-2UINpXDQ" name="Количество" visibility="protected">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl9HyYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl9XyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a1Vl9nyYEeWqF-2UINpXDQ" name="Стоимость" visibility="protected">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a1Vl93yYEeWqF-2UINpXDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a1Vl-HyYEeWqF-2UINpXDQ" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_a1Vl-XyYEeWqF-2UINpXDQ" name="Комплектация номенклатуры">
+      <packagedElement xmi:type="uml:Package" xmi:id="_a1Vl-nyYEeWqF-2UINpXDQ" name="ТЧ Комплектующие"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1Vl-3yYEeWqF-2UINpXDQ" client="_a1Vl-nyYEeWqF-2UINpXDQ" supplier="_a1Vl6XyYEeWqF-2UINpXDQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_a1Vl_HyYEeWqF-2UINpXDQ" name="Заявка на резервирование панелей">
+      <packagedElement xmi:type="uml:Package" xmi:id="_a1Vl_XyYEeWqF-2UINpXDQ" name="ТЧ Экспозиция"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_a1Vl_nyYEeWqF-2UINpXDQ" name="ТЧ Панели"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1Vl_3yYEeWqF-2UINpXDQ" client="_a1Vl_nyYEeWqF-2UINpXDQ" supplier="_a1Vl6XyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_a1VmAHyYEeWqF-2UINpXDQ" name="Вид операции">
+        <ownedAttribute xmi:id="_a1VmAXyYEeWqF-2UINpXDQ" name="Резерв под клиента"/>
+        <ownedAttribute xmi:id="_a1VmAnyYEeWqF-2UINpXDQ" name="Снятие резерва"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmA3yYEeWqF-2UINpXDQ" client="_a1Vl_XyYEeWqF-2UINpXDQ" supplier="_a1VlpnyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmBHyYEeWqF-2UINpXDQ" client="_a1Vl_XyYEeWqF-2UINpXDQ" supplier="_a1VljHyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmBXyYEeWqF-2UINpXDQ" client="_a1Vl_XyYEeWqF-2UINpXDQ" supplier="_a1VlnHyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmBnyYEeWqF-2UINpXDQ" client="_a1Vl_XyYEeWqF-2UINpXDQ" supplier="_a1VltnyYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmB3yYEeWqF-2UINpXDQ" client="_a1Vl_XyYEeWqF-2UINpXDQ" supplier="_a1Vlc3yYEeWqF-2UINpXDQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_a1VmCHyYEeWqF-2UINpXDQ" name="Передача панелей клиенту">
+      <packagedElement xmi:type="uml:Package" xmi:id="_a1VmCXyYEeWqF-2UINpXDQ" name="ТЧ Панели"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmCnyYEeWqF-2UINpXDQ" client="_a1VmCXyYEeWqF-2UINpXDQ" supplier="_a1Vlc3yYEeWqF-2UINpXDQ"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmC3yYEeWqF-2UINpXDQ" client="_a1VmCXyYEeWqF-2UINpXDQ" supplier="_a1VltnyYEeWqF-2UINpXDQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmDHyYEeWqF-2UINpXDQ" client="_a1VmCHyYEeWqF-2UINpXDQ" supplier="_a1VlpnyYEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_a1VmDXyYEeWqF-2UINpXDQ" name="ВГ Передача ОС"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_a1VmDnyYEeWqF-2UINpXDQ" name="ВГ Возврат ОС"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmD3yYEeWqF-2UINpXDQ" client="_a1VmDXyYEeWqF-2UINpXDQ" supplier="_a1VljHyYEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmEHyYEeWqF-2UINpXDQ" client="_a1VmDnyYEeWqF-2UINpXDQ" supplier="_a1VljHyYEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmEXyYEeWqF-2UINpXDQ" client="_a1VmDXyYEeWqF-2UINpXDQ" supplier="_a1VlnHyYEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_a1VmEnyYEeWqF-2UINpXDQ" client="_a1VmDnyYEeWqF-2UINpXDQ" supplier="_a1VlnHyYEeWqF-2UINpXDQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-T1B0HyZEeWqF-2UINpXDQ" name="Заявка на выклейку. Выклейка на склад">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Dppx0HysEeWyqPsOZb4tTw" name="ТЧ Панели"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_GyE7UHysEeWyqPsOZb4tTw" name="ТЧ Товары"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_7huPIHywEeWyqPsOZb4tTw" client="_GyE7UHysEeWyqPsOZb4tTw" supplier="_-yFNcHyAEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_8IetIHywEeWyqPsOZb4tTw" client="_GyE7UHysEeWyqPsOZb4tTw" supplier="_y_2VgHyAEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_sA-WsHyzEeWyqPsOZb4tTw" client="_Dppx0HysEeWyqPsOZb4tTw" supplier="_G6n3UHyAEeWqF-2UINpXDQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_s5q5QHyzEeWyqPsOZb4tTw" client="_Dppx0HysEeWyqPsOZb4tTw" supplier="_9feLgHx_EeWqF-2UINpXDQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_AIETsHynEeWyqPsOZb4tTw" client="_Plji8HyHEeWqF-2UINpXDQ" supplier="_9feLgHx_EeWqF-2UINpXDQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_EDluEHynEeWyqPsOZb4tTw" client="_Plji8HyHEeWqF-2UINpXDQ" supplier="_oMv0wHx_EeWqF-2UINpXDQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_KHejIHynEeWyqPsOZb4tTw" client="_NxxRIHyHEeWqF-2UINpXDQ" supplier="_9feLgHx_EeWqF-2UINpXDQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_Ok3UcHynEeWyqPsOZb4tTw" client="_NxxRIHyHEeWqF-2UINpXDQ" supplier="_oMv0wHx_EeWqF-2UINpXDQ"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_ghDBgH45EeWVWv6Rb1u7fg" name="Типы стендов"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_PknDoH47EeWVWv6Rb1u7fg" name="Поступление товаров и услуг">
+    <packagedElement xmi:type="uml:Package" xmi:id="_S0kYgH47EeWVWv6Rb1u7fg" name="ТЧ Товары"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_gKoasH47EeWVWv6Rb1u7fg" client="_S0kYgH47EeWVWv6Rb1u7fg" supplier="_9feLgHx_EeWqF-2UINpXDQ">
+      <ownedComment xmi:id="_kJbLgH47EeWVWv6Rb1u7fg" annotatedElement="_gKoasH47EeWVWv6Rb1u7fg">
+        <body>Состояние - Склад</body>
+      </ownedComment>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
